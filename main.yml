@@ -1,0 +1,21 @@
+- name: "Aguardando conexão..."
+  hosts: localhost
+  connection: local
+  gather_facts: False
+  vars:
+    acao: "{{ acao }}"
+
+  tasks:
+    - name: "Start instances"
+      amazon.aws.ec2_instance:
+        instance_ids: "i-0cb3321612cda5b32"
+        state: started
+        wait: True
+      when: acao == "Ligar"
+
+    - name: "Stop instances"
+      amazon.aws.ec2_instance:
+        instance_ids: "i-0cb3321612cda5b32"
+        state: stopped
+        wait: True
+      when: acao == "Desligar"
