@@ -8,7 +8,7 @@
   tasks:
     - ansible.builtin.debug:
         msg:
-          "{{ host_vars }}"
+          "{{ ansible_facts }}"
     
     - name: "Start instances"
       amazon.aws.ec2_instance:
