@@ -6,6 +6,10 @@
   gather_facts: False
 
   tasks:
+    - ansible.builtin.debug:
+        msg:
+          "{{ instances }}"
+    
     - name: "Start instances"
       amazon.aws.ec2_instance:
         access_key: "{{ lookup('env','AWS_ACCESS_KEY_ID') }}"
