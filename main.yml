@@ -1,9 +1,9 @@
 - name: "Aguardando conexão..."
-  hosts: localhost
+  hosts:
+    localhost
+    "{{ host }}"
   connection: local
   gather_facts: False
-  vars:
-    acao: "{{ acao }}"
 
   tasks:
     - name: "Start instances"
