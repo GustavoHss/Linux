@@ -8,6 +8,8 @@
   tasks:
     - name: "Start instances"
       amazon.aws.ec2_instance:
+        access_key: "{{ lookup('env','AWS_ACCESS_KEY_ID') }}"
+        aws_secret_key: "{{ lookup('env','AWS_SECRET_ACCESS_KEY') }}"
         instance_ids: "i-0cb3321612cda5b32"
         state: started
         wait: True
@@ -15,6 +17,8 @@
 
     - name: "Stop instances"
       amazon.aws.ec2_instance:
+        access_key: "{{ lookup('env','AWS_ACCESS_KEY_ID') }}"
+        aws_secret_key: "{{ lookup('env','AWS_SECRET_ACCESS_KEY') }}"
         instance_ids: "i-0cb3321612cda5b32"
         state: stopped
         wait: True
