@@ -3,6 +3,6 @@
   gather_facts: False
 
   tasks:
-    - name: Criando arquivo SQL
+    - name: "Criando arquivo SQL"
       ansible.builtin.file:
         - path: /home/ansible/"{ ID_SQL }".sql
