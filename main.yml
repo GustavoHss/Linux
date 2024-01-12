@@ -7,3 +7,4 @@
     - name: Print message
       ansible.builtin.file:
         path: /home/ansible/"{ ID_SQL }".sql
+        state: touch
