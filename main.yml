@@ -1,8 +1,9 @@
+---
 - name: "Aguardando conexão..."
   hosts: rockylinux8
-  gather_facts: False
+  gather_facts: True
 
   tasks:
-  - name: "Criando arquivo SQL"
-    ansible.builtin.file:
-      - path: /home/ansible/"{ ID_SQL }".sql
+    - name: Print message
+      ansible.builtin.file:
+        path: /home/ansible/"{ ID_SQL }".sql
