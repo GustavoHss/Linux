@@ -1,10 +1,9 @@
----
 - name: "Aguardando conexão..."
   hosts: rockylinux8
   gather_facts: True
 
   tasks:
     - name: Print message
-      ansible.builtin.file:
-        path: /home/ansible/"{ ID_SQL }".sql
+      ansible.builtin.debug:
+        path: /home/ansible/"{{ ID_SQL }}".sql
         state: touch
