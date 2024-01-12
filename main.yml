@@ -2,7 +2,7 @@
   hosts: rockylinux8
   gather_facts: False
 
-  tasks:
-    - name: "Criando arquivo SQL"
-      ansible.builtin.file:
-        - path: /home/ansible/"{ ID_SQL }".sql
+tasks:
+  - name: "Criando arquivo SQL"
+    ansible.builtin.file:
+      - path: /home/ansible/"{ ID_SQL }".sql
