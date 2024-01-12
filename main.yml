@@ -11,6 +11,7 @@
     - name: Enviando código SQL para o arquivo {{ ID_SQL }}.sql
       ansible.builtin.blockinfile:
         path: /home/ansible/{{ ID_SQL }}.sql
+        state: absent
         marker: ""
         block: |
           {{ SQL }}
